@@ -1,0 +1,85 @@
+.outterContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-left: 3%;
+}
+
+.innerContainer{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20%;
+    width:100%
+
+}
+
+.userContainer{
+    margin-right: 10%;
+    width: 100%;
+}
+
+.choice{
+    color: hotpink;
+    font-size: 30px;
+}
+
+.correctContainer{
+    width: 100%;
+}
+
+.correct{
+    color: greenyellow;
+    font-size: 28px;
+}
+
+.userItem{
+    font-size: 26px;
+    color: honeydew;
+    margin-top: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.correctItem{
+    font-size: 26px;
+    color: honeydew;
+    margin-top: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.scoreContainer{
+    font-size: 30px;
+    color: black;
+    font-weight: bolder;
+    margin-right: 20%;
+}
+
+.point{
+    font-size: 30px;
+    color: rgb(255, 55, 0);
+    font-weight: bolder;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .userItem{
+        font-size: 12px;
+        color: honeydew;
+        margin-top: 8px;
+    }
+    
+    .correctItem{
+        font-size: 12px;
+        color: honeydew;
+        margin-top: 6px;
+    }
+
+    .correct{
+        color: greenyellow;
+        font-size: 28px;
+    }
+    
+  }

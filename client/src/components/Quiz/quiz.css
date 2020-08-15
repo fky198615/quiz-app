@@ -1,0 +1,41 @@
+.selected{
+    background-color: pink;
+    border-radius: 8px;
+    padding: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    cursor: pointer
+    
+}
+
+.origin{
+    background-color: white;
+    margin-right: 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 20px;
+    cursor: pointer
+}
+
+.number{
+    margin: 10px;
+    font-size: 20px;
+}
+
+.quizTitle{
+    margin: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    font-size: large;
+    color: steelblue;
+}
+
+.select{
+    font-size: 20px;
+    color: black;
+}
+
+.yourChoice{
+    font-size: 26px;
+    color: rgb(255, 55, 0);
+}
