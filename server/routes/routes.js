@@ -34,7 +34,7 @@ route.post('/adding', async (req, res) => {
 })
 
 
-route.get('/:id', async (req, res) => {
+route.get('/getting/:id', async (req, res) => {
     try{
         console.log("getting!!!");
         console.log("req.id ", req.params.id);

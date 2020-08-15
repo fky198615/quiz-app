@@ -78,7 +78,7 @@ function Home() {
              let startId = id[count];
              setCurrentId(startId);
              console.log("startId, ", id, count, startId);
-             const getFirstQuiz = await Axios.get(`http://localhost:5000/questions/${startId}`);
+             const getFirstQuiz = await Axios.get(`http://localhost:5000/questions/getting/${startId}`);
              console.log("get ", getFirstQuiz);
              setQuizQuestion(getFirstQuiz.data.question);
              setQuizOptions(getFirstQuiz.data.options);
@@ -94,7 +94,7 @@ function Home() {
        
         let nextId = id[count];
         setCurrentId(nextId);
-        const getNextQuiz = await Axios.get(`http://localhost:5000/questions/${nextId}`);
+        const getNextQuiz = await Axios.get(`http://localhost:5000/questions/getting/${nextId}`);
         console.log("next ", getNextQuiz) ;
         setQuizQuestion(getNextQuiz.data.question);
         setQuizOptions(getNextQuiz.data.options);
@@ -119,7 +119,7 @@ function Home() {
       
       const previousId = id[previous_count];
       setCurrentId(previousId);
-      const getPreviousQuiz = await Axios.get(`http://localhost:5000/questions/${previousId}`);
+      const getPreviousQuiz = await Axios.get(`http://localhost:5000/questions/getting/${previousId}`);
       setQuizQuestion(getPreviousQuiz.data.question);
       setQuizOptions(getPreviousQuiz.data.options);
       setQuizCorrectAns(getPreviousQuiz.data.correct_answer);
