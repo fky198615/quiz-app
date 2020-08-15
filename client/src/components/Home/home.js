@@ -102,11 +102,6 @@ function Home() {
         setChoice(getNextQuiz.data.choosen_answer);
         setCount(count+1);
         
-        // let newCount = count+1;
-        
-        // // if(newCount >= len){
-        // //   setIfEnd(true);
-        // // }
 
     }
 
