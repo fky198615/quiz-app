@@ -68,16 +68,5 @@ route.post("/edit/:id", async (req, res) => {
     }
 })
 
-//  route.get("/show/result", async (req, res)=>{
-//      try{
-//          console.log("getting result!!!");
-//          Question.find()
-//            .then(question => res.json(question))
-//            .catch(err => res.status(400).json({err: "resuting error" + err.message}));
-
-//      }catch(err){
-//          res.status(500).json({err: err.message});
-//      }
-//  })
 
 module.exports = route;
