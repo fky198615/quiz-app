@@ -84,3 +84,54 @@ body{
     font-size: larger;
     font-weight: bold;
 }
+
+
+@media only screen and (max-width: 800px) {
+    .questionContainer{
+        padding: 10px;
+    }
+    
+    .nextButton{
+        padding: 6px 8px;
+        font-size: 8px;
+    }
+    
+    .previousButton{
+        padding: 6px 8px;
+        font-size: 8px;
+    }
+
+    .submitQuiz{
+        padding: 10px 20px;
+        font-size:10px;
+    }
+
+    .homeContainer{
+        width:90%;
+  }
+
+  }
+
+
+  @media only screen and (max-width: 281px) {
+    
+    .nextButton{
+        padding: 6px 8px;
+        font-size: 6px;
+    }
+    
+    .previousButton{
+        padding: 6px 8px;
+        font-size: 6px;
+    }
+
+    .homeContainer{
+          width:88%;
+    }
+    
+    .submitQuiz{
+        padding: 10px 20px;
+        font-size:8px;
+    }
+
+  }
