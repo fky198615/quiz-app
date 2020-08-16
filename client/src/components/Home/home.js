@@ -15,9 +15,10 @@ function Home() {
     const [len, setLen] = React.useState(0);
     const [currentId, setCurrentId] = React.useState(undefined);
     const [choice, setChoice] = React.useState(undefined);
+    const [answer, setAnswer] = React.useState(undefined);
   
     React.useEffect(()=>{
-      
+      //get idea from https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
       function shuffleArray(arr) {
         for(let i = arr.length-1; i >0; i--)
         {
@@ -101,7 +102,7 @@ function Home() {
         setQuizCorrectAns(getNextQuiz.data.correct_answer);
         setChoice(getNextQuiz.data.choosen_answer);
         setCount(count+1);
-        
+        setAnswer(undefined);
 
     }
 
@@ -114,9 +115,6 @@ function Home() {
       }
 
       console.log("previous, ",previous_count, count);
-
-
-      
       const previousId = id[previous_count];
       setCurrentId(previousId);
       const getPreviousQuiz = await Axios.get(`http://localhost:5000/questions/getting/${previousId}`);
@@ -125,10 +123,11 @@ function Home() {
       setQuizCorrectAns(getPreviousQuiz.data.correct_answer);
       setChoice(getPreviousQuiz.data.choosen_answer);
       setCount(previous_count+1);
-      
-
+      setAnswer(undefined);
     }
 
+    
+    
     const submit = e =>{
       setIfEnd(true);
     }
@@ -146,7 +145,8 @@ function Home() {
            
            ( <>
            <div className = "questionContainer">
-            <Quiz qusetion ={quizQusetion} options={quizOptions} ifEnd ={ifEnd} correctAnswer={quizCorrectAns} count={count} currentId={currentId} choice={choice} len={len}/>
+            <Quiz qusetion ={quizQusetion} options={quizOptions} ifEnd ={ifEnd} correctAnswer={quizCorrectAns} count={count} currentId={currentId} 
+            choice={choice} len={len} answer={answer} setAnswer={setAnswer}/>
           </div>
           
           <div className ="nextAndPrevious">

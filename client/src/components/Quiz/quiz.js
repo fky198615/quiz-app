@@ -4,17 +4,14 @@ import './quiz.css';
 import Axios from 'axios';
 
 function Quiz(props) {
-  // const [selection, setSelection] = React.useState(undefined);
-  const [answer, setAnswer] = React.useState(undefined);
-  
+ 
   const enterAnswer =  e =>{
-  
   
   let select_answer = e.target.getAttribute("data-index");
   console.log("get answer,", props.options[select_answer]);
   let score = 0;
   
-  setAnswer(props.options[select_answer]);
+  props.setAnswer(props.options[select_answer]);
   
   if(props.options[select_answer] === props.correctAnswer){
     score = score+1;
@@ -39,7 +36,7 @@ function Quiz(props) {
        <ul>
          {
             props.options.map(function(item, i){
-            return <button className ={`${answer === item ? "selected" : "origin"}`} key={i} data-index={i} onClick={enterAnswer}>{item}</button>;
+            return <button className ={`${props.answer === item ? "selected" : "origin"}`} key={i} data-index={i} onClick={enterAnswer}>{item}</button>;
             })
          }
        </ul>
