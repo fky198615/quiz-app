@@ -3,6 +3,8 @@ import React from 'react';
 import './quiz.css';
 import Axios from 'axios';
 
+const endPoint = `http://localhost:5000`;
+
 function Quiz(props) {
  
   const enterAnswer =  e =>{
@@ -17,7 +19,7 @@ function Quiz(props) {
     score = score+1;
   }
 
-   const editQusetion = Axios.post(`http://localhost:5000/questions/edit/${props.currentId}`, {
+   const editQusetion = Axios.post(`${endPoint}/questions/edit/${props.currentId}`, {
      "question": props.qusetion,
      "options": props.options,
      "correct_answer": props.correctAnswer,

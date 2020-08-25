@@ -3,6 +3,7 @@ import Axios from 'axios';
 
 import './result.css';
 
+const endPoint = `http://localhost:5000`;
 
 function Result(props){
 
@@ -21,7 +22,7 @@ function Result(props){
                for(let i = 0; i < props.quizLen; i++)
                {
                 let resutId = props.quizId[i]
-                const result = await Axios.get(`http://localhost:5000/questions/getting/${resutId}`);
+                const result = await Axios.get(`${endPoint}/questions/getting/${resutId}`);
                 console.log("get result", result);
                 temp_userChoice.push(result.data.choosen_answer);
                 correct_userChoice.push(result.data.correct_answer);
