@@ -4,6 +4,7 @@ import Quiz from '../Quiz/quiz';
 import Result from '../Result/result';
 import './home.css';
 
+
 const endPoint = `http://localhost:5000`;
 
 function Home() {
@@ -20,6 +21,7 @@ function Home() {
     const [answer, setAnswer] = React.useState(undefined);
     const [ifLast, setIfLast] = React.useState(false);
     const [ifFirst, setIfFirst] = React.useState(false);
+    const [loading, setLoading] = React.useState(false);
   
     React.useEffect(()=>{
       //get idea from https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
@@ -66,8 +68,11 @@ function Home() {
            
             console.log("dataAfterAdding, " , dataAfterAdding.data._id);
             id.push(dataAfterAdding.data._id);
-            
-  
+        }
+        
+        if(id.length>0){
+          setLoading(true)
+        
         }
         console.log("id in home, ", id);
         setId(id);
@@ -75,8 +80,7 @@ function Home() {
   
       addQuestionToDB();
   
-    }, []);
-  
+    },[]);
     
     
     const startQuiz = async (e)=>{
@@ -149,7 +153,7 @@ function Home() {
       setIfEnd(true);
     }
 
-
+   
   
   return (
     <div className="page"> 
@@ -179,8 +183,9 @@ function Home() {
           <div className = "start">
           <div className = "text">If you are ready, please click the button to start the quiz.</div>
           <div className="homeButtion" > 
-              <button className ="quizButtion" type="submit" onClick={startQuiz}>Start Quiz</button>
-          
+           {loading ? (<button className ="quizButtion" type="submit" onClick={startQuiz}>Start Quiz</button>) : (<div>loading....</div>) 
+           
+           }
           </div>
           </div>
           </>)
